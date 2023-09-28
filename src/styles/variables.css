@@ -1,0 +1,14 @@
+:root {
+  --white: #ffffff;
+  --light: #f3f3f3;
+  --dark: #42413c;
+  --grey: #969696;
+  --blue: #76b7cd;
+  --blue-hover: #99bac4;
+  --orange: #d98326;
+  --orange-hover: #e4a561;
+  --light-orange: #f1ece6;
+  --font: Poppins, sans-serif;
+  --max-width: 1900px;
+  --container-width: 1040px;
+}

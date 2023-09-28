@@ -1,0 +1,49 @@
+@import './fonts.css';
+@import './index.css';
+@import './variables.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: var(--max-width);
+  height: 100vh;
+  margin: auto;
+
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--dark);
+}
+
+/* .modal-open {
+  opacity: 0.7;
+  overflow-y: hidden;
+} */
+
+p,
+input {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border-style: none;
+}
+
+.container {
+  background-color: var(--white);
+  min-height: 100vh;
+}
+
+.content {
+  max-width: var(--container-width);
+  margin: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
