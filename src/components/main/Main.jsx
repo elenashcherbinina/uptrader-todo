@@ -3,16 +3,16 @@ import { useSelector } from 'react-redux';
 
 import './main.css';
 import renderModal from '../modals/Modal';
-import Project from './Project';
+import Project from './projects/Project';
 
 const Main = () => {
-  const projects = useSelector((state) => state.projects);
-  console.log('main projects', projects);
+  const projects = useSelector((state) => state.projects.list);
 
   const initialModal = {
     type: null,
     project: null,
   };
+
   const [modalInfo, setModalInfo] = useState(initialModal);
 
   const showModal = (type, project = null) => {
@@ -33,10 +33,10 @@ const Main = () => {
 
   return (
     <main>
-      <div className='container'>
+      <div id='home-page' className='container'>
         <div className='content'>
           {modalInfo.type ? (
-            renderModal(modalInfo, hideModal)
+            renderModal(modalInfo, hideModal, 'projects', projects)
           ) : (
             <>
               <button onClick={() => showModal('adding')} className='content__btn-add'>

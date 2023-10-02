@@ -1,14 +1,19 @@
-const projects = (state = [], action) => {
+const projects = (state = { currentProjectId: null, list: [] }, action) => {
   switch (action.type) {
+    case 'CURRENT_PROJECT_SET': {
+      return { ...state, currentProjectId: action.payload };
+    }
     case 'PROJECT_ADD': {
-      return [...state, action.payload];
+      state.list.push(action.payload);
+      return state;
     }
     case 'PROJECT_REMOVE': {
-      return state.filter((project) => project.id !== action.payload);
+      const filtered = state.list.filter((project) => project.id !== action.payload);
+      return { ...state, list: filtered };
     }
     case 'PROJECT_RENAME': {
       const { id, name } = action.payload;
-      const current = state.find((project) => project.id === id);
+      const current = state.list.find((project) => project.id === id);
       current.name = name;
       return state;
     }

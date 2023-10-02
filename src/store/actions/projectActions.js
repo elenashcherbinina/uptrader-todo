@@ -1,5 +1,0 @@
-export const PROJECT_ADD = 'PROJECT_ADD';
-
-export const PROJECT_REMOVE = 'PROJECT_REMOVE';
-
-export const PROJECT_RENAME = 'PROJECT_RENAME';

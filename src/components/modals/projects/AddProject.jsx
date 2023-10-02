@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import closeButton from '../../assets/close-line.svg';
-import { useTodoContext } from '../../context';
-import { getRandomId } from '../../helpers/helpers';
+import closeButton from '../../../assets/close-line.svg';
+import { useTodoContext } from '../../../context';
+import { getRandomId } from '../../../helpers/helpers';
 
-const Add = ({ hideModal }) => {
+const AddProject = ({ hideModal }) => {
   const { addProject } = useTodoContext();
   const inputRef = useRef(null);
 
@@ -43,11 +43,11 @@ const Add = ({ hideModal }) => {
           <button type='button' onClick={hideModal}>
             Отменить
           </button>
-          <button type='submit'>Отправить</button>
+          <button type='submit'>Подтвердить</button>
         </div>
       </form>
     </div>
   );
 };
 
-export default Add;
+export default AddProject;

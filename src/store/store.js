@@ -1,8 +1,14 @@
-import { createStore } from 'redux';
+import { legacy_createStore as createStore } from 'redux';
 import rootReducer from './reducers/rootReducer';
 
-const store = createStore(rootReducer);
+const persistedState = localStorage.getItem('todos')
+  ? JSON.parse(localStorage.getItem('todos'))
+  : {};
 
-console.log('STORE', store.getState());
+const store = createStore(rootReducer, persistedState);
+
+store.subscribe(() => {
+  localStorage.setItem('todos', JSON.stringify(store.getState()));
+});
 
 export default store;

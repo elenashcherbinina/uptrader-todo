@@ -16,7 +16,7 @@ const App = () => {
     createRoutesFromElements(
       <Route path={routes.rootPage} element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path={routes.tasksPage} element={<TasksPage />} />
+        <Route path={`project/:id${routes.tasksPage}`} element={<TasksPage />} />
       </Route>,
     ),
   );

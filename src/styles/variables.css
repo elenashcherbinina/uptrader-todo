@@ -1,13 +1,16 @@
 :root {
-  --white: #ffffff;
-  --light: #f3f3f3;
-  --dark: #42413c;
-  --grey: #969696;
   --blue: #76b7cd;
   --blue-hover: #99bac4;
+  --dark: #42413c;
+  --gold: rgb(236, 215, 100);
+  --green: rgb(152, 228, 152);
+  --grey: #969696;
+  --light: #f3f3f3;
+  --light-orange: #f1ece6;
   --orange: #d98326;
   --orange-hover: #e4a561;
-  --light-orange: #f1ece6;
+  --red: rgb(236, 127, 127);
+  --white: #ffffff;
   --font: Poppins, sans-serif;
   --max-width: 1900px;
   --container-width: 1040px;

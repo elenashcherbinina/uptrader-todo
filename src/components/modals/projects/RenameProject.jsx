@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import closeButton from '../../assets/close-line.svg';
-import { useTodoContext } from '../../context';
+import closeButton from '../../../assets/close-line.svg';
+import { useTodoContext } from '../../../context';
 
-const Rename = ({ modalInfo, hideModal }) => {
+const RenameProject = ({ modalInfo, hideModal }) => {
   const { project } = modalInfo;
   const { renameProject } = useTodoContext();
   const inputRef = useRef(null);
@@ -51,4 +51,4 @@ const Rename = ({ modalInfo, hideModal }) => {
   );
 };
 
-export default Rename;
+export default RenameProject;

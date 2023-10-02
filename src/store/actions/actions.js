@@ -1,0 +1,17 @@
+const actions = {
+  projects: {
+    PROJECT_ADD: 'PROJECT_ADD',
+    PROJECT_REMOVE: 'PROJECT_REMOVE',
+    PROJECT_RENAME: 'PROJECT_RENAME',
+    CURRENT_PROJECT_SET: 'CURRENT_PROJECT_SET',
+  },
+  tasks: {
+    TASK_ADD: 'TASK_ADD',
+    TASK_REMOVE: 'TASK_REMOVE',
+    TASKS_REMOVE: 'TASKS_REMOVE',
+    TASK_EDIT: 'TASK_EDIT',
+    TASK_COMMENT: 'TASK_COMMENT',
+  },
+};
+
+export default actions;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import closeButton from '../../assets/close-line.svg';
-import { useTodoContext } from '../../context';
+import closeButton from '../../../assets/close-line.svg';
+import { useTodoContext } from '../../../context';
 
-const Remove = ({ modalInfo, hideModal }) => {
+const RemoveProject = ({ modalInfo, hideModal }) => {
   const { removeProject } = useTodoContext();
   const { project } = modalInfo;
 
@@ -38,4 +38,4 @@ const Remove = ({ modalInfo, hideModal }) => {
   );
 };
 
-export default Remove;
+export default RemoveProject;
