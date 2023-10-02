@@ -7,16 +7,6 @@ import Task from '../main/tasks/Task';
 
 const TasksPage = () => {
   const currentProjectId = useSelector((state) => state.projects.currentProjectId);
-  const tasks = useSelector((state) => state.tasks).filter(
-    (task) => task.projectId === currentProjectId,
-  );
-  const project = useSelector((state) => state.projects.list).find(
-    (el) => el.id === currentProjectId,
-  );
-
-  const queue = tasks.filter(({ status }) => status === 'queue');
-  const development = tasks.filter(({ status }) => status === 'development');
-  const done = tasks.filter(({ status }) => status === 'done');
 
   const initialModal = {
     type: null,
@@ -24,7 +14,26 @@ const TasksPage = () => {
   };
 
   const [modalInfo, setModalInfo] = useState(initialModal);
+  const [search, setSearch] = useState('');
 
+  const stateTasks = useSelector((state) => state.tasks).filter(
+    (task) => task.projectId === currentProjectId,
+  );
+
+  const project = useSelector((state) => state.projects.list).find(
+    (el) => el.id === currentProjectId,
+  );
+
+  const tasks =
+    search !== ''
+      ? stateTasks.filter((task) => task.name === search || task.num === search)
+      : stateTasks;
+
+  const queue = tasks.filter(({ status }) => status === 'queue');
+  const development = tasks.filter(({ status }) => status === 'development');
+  const done = tasks.filter(({ status }) => status === 'done');
+
+  console.log(tasks);
   const showModal = (type, task = null) => {
     const tasksBox = document.getElementById('task-page');
     tasksBox.classList.add('modal-open');
@@ -43,16 +52,33 @@ const TasksPage = () => {
     });
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div id='task-page' className='container'>
       <div className='content'>
         <div className='content__header'>
-          <h2 className='content__header-title'>
-            <p>{project.name}</p>
-          </h2>
-          <button onClick={() => showModal('adding')} className='content__btn-add add-task'>
-            +
-          </button>
+          <div>
+            <h2 className='content__header-title'>
+              <p>{project.name}</p>
+            </h2>
+            <button onClick={() => showModal('adding')} className='content__btn-add add-task'>
+              +
+            </button>
+          </div>
+          <form onSubmit={handleSearch}>
+            <input
+              type='text'
+              placeholder='искать'
+              name='search'
+              value={search}
+              autoFocus
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <button type='submit'></button>
+          </form>
         </div>
         {modalInfo.type ? (
           renderModal(modalInfo, hideModal, 'tasks', tasks)

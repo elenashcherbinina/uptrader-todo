@@ -46,7 +46,7 @@ const AddTask = ({ hideModal, list }) => {
       </div>
       <form className='modal__form' onSubmit={handleSubmit}>
         <input
-          type='number'
+          type='text'
           name='num'
           placeholder='Nr.'
           ref={inputRef}
