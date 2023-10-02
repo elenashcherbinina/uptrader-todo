@@ -9,17 +9,18 @@
   gap: 30px;
   align-items: flex-start;
 
-  width: 20%;
+  width: 100%;
   font-size: 1.5rem;
 }
 
 .add-task {
   height: 40px;
-  width: 100%;
+  width: 10%;
 }
 
-.content__header-title {
+.content__header-title p {
   color: var(--orange);
+  margin-top: -0.2rem;
 }
 
 .content__header form {

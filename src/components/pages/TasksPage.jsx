@@ -33,7 +33,6 @@ const TasksPage = () => {
   const development = tasks.filter(({ status }) => status === 'development');
   const done = tasks.filter(({ status }) => status === 'done');
 
-  console.log(tasks);
   const showModal = (type, task = null) => {
     const tasksBox = document.getElementById('task-page');
     tasksBox.classList.add('modal-open');
